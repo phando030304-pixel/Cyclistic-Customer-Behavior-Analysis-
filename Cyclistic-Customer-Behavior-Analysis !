@@ -1,10 +1,118 @@
 ---
-title: 'Case Study: How does a bike-share company navigate speedy success'
-author: 'Hoang Do Phan'
-date: '2026-03-24'
+title: "Case Study: How Annual Members and Casual Riders Use Cyclistic Bikes Differently"
+author: "Hoang Do Phan"
+date: "2026-05-19"
 ---
 
-# Case Study: How does a bike-share company navigate speedy success
+# Case Study: How Annual Members and Casual Riders Use Cyclistic Bikes Differently
 
 **Author:** Hoang Do Phan  
-**Date:** 2026-03-24
+**Date:** 2026-05-19
+
+---
+
+## Background
+
+This project is part of the [Google Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-data-analytics) program.
+
+Cyclistic is a fictional bike-share company based in Chicago that operates more than 5,800 bicycles and over 600 docking stations. The company offers different types of bicycles including traditional bikes, reclining bikes, hand tricycles, and cargo bikes to make the service more accessible for different riders.
+
+Customers who purchase single-ride or full-day passes are considered **casual riders**, while customers who purchase yearly subscriptions are classified as **annual members**.
+
+Cyclistic’s finance team has determined that annual members are significantly more profitable than casual riders. Because of this, the marketing department wants to better understand customer riding behavior in order to develop effective strategies that encourage casual riders to purchase annual memberships.
+
+The marketing analytics team is interested in analyzing historical trip data to identify riding patterns, customer behaviors, and trends between both rider groups.
+
+---
+
+# Step 1: Understanding the Business Task
+
+## Business Task
+
+Identify how annual members and casual riders use Cyclistic bikes differently.
+
+## Stakeholders
+
+### Primary Stakeholder
+- Lily Moreno — Director of Marketing
+
+### Secondary Stakeholders
+- Cyclistic Marketing Analytics Team
+- Cyclistic Executive Team
+
+---
+
+# Step 2: Data Collection & Preparation
+
+## Data Source & Integrity
+
+- The dataset used in this project contains 12 months of Cyclistic historical trip data.
+- Data is publicly available and provided by Motivate International Inc.
+- Dataset source:
+  https://divvy-tripdata.s3.amazonaws.com/index.html
+
+- The dataset is distributed in multiple `.csv` files organized by month.
+
+- Due to data privacy regulations, personally identifiable customer information is not included in the dataset.
+
+## Initial Observations
+
+1. The dataset contains ride information such as:
+   - ride_id
+   - rideable_type
+   - started_at
+   - ended_at
+   - station names
+   - geographic coordinates
+   - member_casual
+
+2. Date and time columns are stored in datetime format.
+
+3. Some station IDs contain inconsistent formatting between files.
+
+4. Several rows contain missing station names but still include latitude and longitude information.
+
+5. The `member_casual` column contains two rider categories:
+   - member
+   - casual
+
+---
+
+# Step 3: Data Processing & Cleaning
+
+## Tools Used
+
+### SQL
+Used for:
+- Data cleaning
+- Data transformation
+- Aggregation
+- Exploratory analysis
+
+### R
+Used for:
+- Data analysis
+- Statistical summaries
+- Data visualization
+
+### Additional Tools
+- Tableau
+- Excel
+- GitHub
+
+## Data Cleaning Process
+
+The following steps were completed during data cleaning:
+
+- Removed duplicate rows
+- Removed null values
+- Filtered negative ride durations
+- Standardized column names and formats
+- Converted datetime columns
+- Created additional calculated fields:
+  - ride_length
+  - day_of_week
+  - month
+  - season
+
+- Combined monthly datasets into a single cleaned dataset for analysis.
