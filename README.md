@@ -1,10 +1,10 @@
-<p align="center">
-  <img src="images/cyclistic-banner.png" width="100%">
-</p>
-# From Casual Riders to Loyal Members: A Cyclistic Case Study
+
+# From Casual Riders to Loyal Members: A Cyclistic Case Study<img width="237" height="198" alt="Screenshot 2026-05-18 211032" src="https://github.com/user-attachments/assets/89196a4d-bea1-43f2-8fa2-0a6d3b672a02" />
+
 
 ## Overview
-This project is the first case study from the Google Data Analytics Professional Certificate program. The analysis focuses on Cyclistic, a fictional bike-share company based in Chicago, and explores how different customer groups use the service.
+This project is the first case study from the 
+[Google Data Analytics Professional Certificate](https://www.coursera.org/professional-certificates/google-data-analytics) program. The analysis focuses on Cyclistic, a fictional bike-share company based in Chicago, and explores how different customer groups use the service.
 
 The primary business objective of this project is to understand the behavioral differences between casual riders and annual members in order to support Cyclistic’s long-term membership growth strategy. Since annual members are more profitable for the company, the marketing team aims to develop data-driven strategies that can convert casual riders into loyal members.
 
@@ -30,10 +30,6 @@ The objective of this project is to identify behavioral differences between casu
 Main tools used in this project:
 - SQL
 - R Langugue
-
-Additional tools:
-- Tableau
-- Excel
 
 ---
 
