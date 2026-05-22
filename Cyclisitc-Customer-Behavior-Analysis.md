@@ -211,3 +211,189 @@ Output:
 <img width="807" height="467" alt="Screenshot 2026-05-20 223258" src="https://github.com/user-attachments/assets/92507881-f87b-4e96-a666-8c2e46d5013a" />
 
 The final cleaned dataset contains **5,552,965 records** and **17 variables**, and is ready for exploratory data analysis.
+
+## Step 5: Exploratory Data Analysis
+
+The objective of this analysis is to identify how annual members and casual riders use Cyclistic bikes differently.
+
+### 5.1 Total Rides by Rider Type
+
+```r
+rides_by_member <- cyclistic_cleaned %>%
+  group_by(member_casual) %>%
+  summarise(total_rides = n())
+
+rides_by_member
+```
+
+Output:
+
+| Rider Type | Total Rides |
+|------------|------------:|
+| Casual | 1,999,488 |
+| Member | 3,553,477 |
+
+<img width="485" height="211" alt="Screenshot 2026-05-21 210442" src="https://github.com/user-attachments/assets/68402d00-31a3-4826-9188-0f5eea274ece" />
+
+**Observation:** Annual members generated significantly more rides than casual riders, accounting for approximately 64% of all rides.
+
+---
+
+### 5.2 Average Ride Duration
+
+```r
+avg_duration <- cyclistic_cleaned %>%
+  group_by(member_casual) %>%
+  summarise(
+    avg_ride_length = mean(ride_length)
+  )
+
+avg_duration
+```
+
+Output:
+
+| Rider Type | Average Ride Length (Minutes) |
+|------------|------------------------------:|
+| Casual | 22.6 |
+| Member | 12.3 |
+
+<img width="477" height="260" alt="Screenshot 2026-05-21 210526" src="https://github.com/user-attachments/assets/ef7a1c61-4f71-47df-981d-36f9244b29d8" />
+
+**Observation:** Casual riders spent nearly twice as much time per ride compared to annual members.
+
+---
+
+### 5.3 Riding Patterns by Day of Week
+
+```r
+rides_by_weekday <- cyclistic_cleaned %>%
+  group_by(
+    day_of_week,
+    member_casual
+  ) %>%
+  summarise(
+    total_rides = n(),
+    .groups = "drop"
+  )
+
+rides_by_weekday
+```
+
+<img width="488" height="588" alt="Screenshot 2026-05-21 210604" src="https://github.com/user-attachments/assets/430cd11f-b0f0-4138-b614-ed9c88c3ce93" />
+
+**Observation:** Member rides remained relatively consistent throughout the week, while casual riders showed noticeably higher activity during weekends, particularly on Saturday.
+
+---
+
+### 5.4 Monthly Riding Patterns
+
+```r
+rides_by_month <- cyclistic_cleaned %>%
+  group_by(
+    month,
+    member_casual
+  ) %>%
+  summarise(
+    total_rides = n(),
+    .groups = "drop"
+  )
+
+rides_by_month
+```
+
+<img width="452" height="525" alt="Screenshot 2026-05-21 210721" src="https://github.com/user-attachments/assets/1e0f48eb-3422-4ee6-a820-13e2dc694ec0" />
+
+**Observation:** Both rider groups demonstrated strong seasonality, with ride volumes increasing during warmer months and declining during winter.
+
+---
+
+### 5.5 Bike Type Preferences
+
+```r
+bike_type_usage <- cyclistic_cleaned %>%
+  group_by(
+    rideable_type,
+    member_casual
+  ) %>%
+  summarise(
+    total_rides = n(),
+    .groups = "drop"
+  )
+
+bike_type_usage
+```
+
+Output:
+
+| Bike Type | Rider Type | Total Rides |
+|------------|------------|------------:|
+| Classic Bike | Casual | 672,670 |
+| Classic Bike | Member | 1,275,359 |
+| Electric Bike | Casual | 1,326,818 |
+| Electric Bike | Member | 2,278,118 |
+
+<img width="475" height="380" alt="Screenshot 2026-05-21 210740" src="https://github.com/user-attachments/assets/34713f1b-78c9-45b4-9443-c7e25e34acc9" />
+
+**Observation:** Electric bikes were the most popular option for both rider groups, accounting for the majority of rides.
+
+---
+
+### 6.6 Average Ride Duration by Day of Week
+
+```r
+duration_by_weekday <- cyclistic_cleaned %>%
+  group_by(
+    day_of_week,
+    member_casual
+  ) %>%
+  summarise(
+    avg_ride_length = mean(ride_length),
+    .groups = "drop"
+  )
+
+duration_by_weekday
+```
+
+<img width="524" height="582" alt="Screenshot 2026-05-21 210806" src="https://github.com/user-attachments/assets/c8a84f50-c429-434b-a4b3-0b9c662c924f" />
+
+**Observation:** Casual riders consistently recorded longer ride durations across every day of the week. The highest average ride duration was observed on Sunday (26.1 minutes), suggesting that casual riders primarily use Cyclistic bikes for leisure and recreational purposes.
+### 5.7 Exporting Summary Tables for Tableau
+
+After completing the exploratory analysis in R, six summary tables were exported as CSV files for visualization in Tableau.
+
+```r
+write_csv(
+  rides_by_member,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/rides_by_member.csv"
+)
+
+write_csv(
+  avg_duration,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/avg_duration.csv"
+)
+
+write_csv(
+  rides_by_weekday,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/rides_by_weekday.csv"
+)
+
+write_csv(
+  rides_by_month,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/rides_by_month.csv"
+)
+
+write_csv(
+  bike_type_usage,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/bike_type_usage.csv"
+)
+
+write_csv(
+  duration_by_weekday,
+  "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/duration_by_weekday.csv"
+)
+```
+
+<img width="898" height="613" alt="Screenshot 2026-05-21 212111" src="https://github.com/user-attachments/assets/90dc57b0-d39e-43b0-a904-a7733638a3aa" />
+
+These exported CSV files were used as the data sources for creating Tableau visualizations and building the final dashboard.
