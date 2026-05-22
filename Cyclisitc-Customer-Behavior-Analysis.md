@@ -55,6 +55,8 @@ To identify how do annual members and casual rider s use Cyclistic differently.
 
 ### Tools Used
 
--   SQL (sqlite, DB Browser): To process and clean data for further analysis
+-   SQL (sqlite, DB Browser): Because the files is too large for sql so R will be the main tool :(
 
--   R: To analyze and visualize data
+-   R: Cleaning and analysis data
+
+-   Teableau: Data visualization 
