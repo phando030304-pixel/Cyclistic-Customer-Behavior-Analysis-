@@ -147,6 +147,7 @@ Output:
 ```r
 [1] 0
 ```
+
 <img width="412" height="52" alt="Screenshot 2026-05-20 222734" src="https://github.com/user-attachments/assets/ef296628-ea69-4ee7-82a8-b802bfeb02b7" />
 
 No duplicate ride IDs were identified in the dataset.
@@ -206,6 +207,7 @@ Output:
 ```r
 [1] 5552965 17
 ```
+
 <img width="807" height="467" alt="Screenshot 2026-05-20 223258" src="https://github.com/user-attachments/assets/92507881-f87b-4e96-a666-8c2e46d5013a" />
 
 The final cleaned dataset contains **5,552,965 records** and **17 variables**, and is ready for exploratory data analysis.
