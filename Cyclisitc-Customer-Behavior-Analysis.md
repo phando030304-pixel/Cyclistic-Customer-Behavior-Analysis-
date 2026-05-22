@@ -51,7 +51,6 @@ To identify how do annual members and casual rider s use Cyclistic differently.
 
 5.  member_casual column contains 2 types of membership data: member or casual.
 
-## Step 3: Processing Data (Cleaning and Transformation)
 
 ### Tools Used
 
@@ -59,4 +58,154 @@ To identify how do annual members and casual rider s use Cyclistic differently.
 
 -   R: Cleaning and analysis data
 
--   Teableau: Data visualization 
+-   Teableau: Data visualization
+  
+## Step 3: Data Collection and Consolidation
+
+The Cyclistic trip data was downloaded from the Divvy Trip Data repository. For this project, I used twelve monthly datasets from January 2025 to December 2025.
+
+The original downloaded files were stored in a `zip_files` folder, while the extracted CSV files were stored in a `cvs_files` folder for easier access and organization.
+
+<img width="1000" height="718" alt="Screenshot 2026-05-20 201212" src="https://github.com/user-attachments/assets/30f5dfdd-1c1b-4369-a2d7-0a082cec9eb6" />
+<img width="1000" height="717" alt="Screenshot 2026-05-20 201159" src="https://github.com/user-attachments/assets/3a431da8-8204-41ea-9fd1-ba4e261f1687" />
+
+
+### 3.1 Using R to Merge the Monthly Datasets
+ To simplify data management and analysis, all twelve monthly CSV files were combined into a single dataset using R.
+ 
+```r
+install.packages("tidyverse")
+```
+
+### 3.2 Verifying Monthly Files
+
+```r
+library(tidyverse)
+
+files <- list.files(
+  path = "C:/Users/pc/OneDrive/Máy tính/cycle data raw 12month/cvs_files",
+  full.names = TRUE
+)
+
+length(files)
+```
+
+Output:
+
+```r
+[1] 12
+```
+<img width="793" height="203" alt="Screenshot 2026-05-20 202608" src="https://github.com/user-attachments/assets/07a74de4-caa9-4964-952d-0792118b34f3" />
+
+This confirmed that all twelve monthly datasets were available.
+
+### 3.3 Merging Monthly Datasets
+
+```r
+cyclistic_data <- map_df(files, read_csv)
+```
+
+The `map_df()` function was used to merge all monthly files into a single dataframe named `cyclistic_data`.
+
+### 3.4 Validating the Merged Dataset
+
+```r
+dim(cyclistic_data)
+
+glimpse(cyclistic_data)
+```
+<img width="815" height="391" alt="Screenshot 2026-05-20 203149" src="https://github.com/user-attachments/assets/17cac96e-d1c0-43af-90f9-aeadc54e2357" />
+
+These checks were used to review the number of rows, columns, variable names, and data types before starting the cleaning process.
+
+  ## ## Step 4: Data Cleaning and Transformation
+
+### 4.1 Checking Missing Values
+
+Missing values were assessed using the `colSums(is.na())` function.
+
+```r
+colSums(is.na(cyclistic_data))
+```
+
+<img width="793" height="191" alt="Screenshot 2026-05-20 220705" src="https://github.com/user-attachments/assets/d839f09e-907b-4a07-9c0c-60afb635d929" />
+
+Some station-related columns contained missing values. However, no missing values were found in key variables such as `ride_id`, `rideable_type`, `started_at`, `ended_at`, and `member_casual`.
+
+---
+
+### 4.2 Checking Duplicate Records
+
+Duplicate ride IDs were checked to ensure data integrity.
+
+```r
+sum(duplicated(cyclistic_data$ride_id))
+```
+
+Output:
+
+```r
+[1] 0
+```
+<img width="412" height="52" alt="Screenshot 2026-05-20 222734" src="https://github.com/user-attachments/assets/ef296628-ea69-4ee7-82a8-b802bfeb02b7" />
+
+No duplicate ride IDs were identified in the dataset.
+
+---
+
+### 4.3 Creating New Variables
+
+Date-time columns were converted to the appropriate format, and additional variables were created for analysis.
+
+```r
+cyclistic_data <- cyclistic_data %>%
+  mutate(
+    started_at = as.POSIXct(started_at),
+    ended_at = as.POSIXct(ended_at)
+  )
+
+cyclistic_data <- cyclistic_data %>%
+  mutate(
+    ride_length = as.numeric(
+      difftime(ended_at, started_at, units = "mins")
+    )
+  )
+
+cyclistic_cleaned <- cyclistic_data %>%
+  filter(ride_length > 0)
+
+cyclistic_cleaned <- cyclistic_cleaned %>%
+  mutate(
+    day_of_week = weekdays(started_at),
+    month = format(started_at, "%B"),
+    year = format(started_at, "%Y")
+  )
+```
+
+The following variables were added:
+
+- `ride_length`
+- `day_of_week`
+- `month`
+- `year`
+
+---
+
+### 4.4 Validating the Cleaned Dataset
+
+The cleaned dataset was reviewed to confirm that all transformations were successfully applied.
+
+```r
+dim(cyclistic_cleaned)
+
+glimpse(cyclistic_cleaned)
+```
+
+Output:
+
+```r
+[1] 5552965 17
+```
+<img width="807" height="467" alt="Screenshot 2026-05-20 223258" src="https://github.com/user-attachments/assets/92507881-f87b-4e96-a666-8c2e46d5013a" />
+
+The final cleaned dataset contains **5,552,965 records** and **17 variables**, and is ready for exploratory data analysis.
