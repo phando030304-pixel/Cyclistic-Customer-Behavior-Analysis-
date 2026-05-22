@@ -58,7 +58,7 @@ To identify how do annual members and casual rider s use Cyclistic differently.
 
 -   R: Cleaning and analysis data
 
--   Teableau: Data visualization
+-   Tableau: Data visualization
   
 ## Step 3: Data Collection and Consolidation
 
