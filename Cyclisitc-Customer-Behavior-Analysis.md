@@ -474,7 +474,5 @@ This chart shows how average ride duration changes throughout the week for each 
 
 The six visualizations were combined into one Tableau dashboard to present the key findings clearly.
 
-![Cyclistic Dashboard](<img width="1499" height="999" alt="Dashboard 1" src="https://github.com/user-attachments/assets/a2c6ccc4-d02d-4abd-8367-25787ff6293c" />
-)
-
+[View Interactive Tableau Dashboard](https://public.tableau.com/views/CycleDataProject/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
