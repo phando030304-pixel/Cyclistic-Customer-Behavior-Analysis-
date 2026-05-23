@@ -397,3 +397,84 @@ write_csv(
 <img width="898" height="613" alt="Screenshot 2026-05-21 212111" src="https://github.com/user-attachments/assets/90dc57b0-d39e-43b0-a904-a7733638a3aa" />
 
 These exported CSV files were used as the data sources for creating Tableau visualizations and building the final dashboard.
+## Step 6: Data Visualization and Dashboard
+
+After completing the exploratory analysis in R, the summary tables were exported and visualized in Tableau. Six charts were created to compare riding behavior between annual members and casual riders.
+
+### 6.1 Total Rides by Rider Type
+
+**Chart Type:** Bar Chart  
+**Data Source:** `rides_by_member.csv`
+
+<img width="433" height="670" alt="Sheet 2" src="https://github.com/user-attachments/assets/7fb6308a-88f9-4d12-8daa-77aeb9077842" />
+
+
+This chart compares the total number of rides taken by annual members and casual riders.
+
+---
+
+### 6.2 Average Ride Duration
+
+**Chart Type:** Bar Chart  
+**Data Source:** `avg_duration.csv`
+
+<img width="404" height="705" alt="Sheet 1" src="https://github.com/user-attachments/assets/4e8af0de-3b79-4f4c-aea1-cd578a1217dc" />
+
+This chart compares the average ride duration between annual members and casual riders.
+
+---
+
+### 6.3 Weekly Riding Patterns
+
+**Chart Type:** Side-by-Side Bar Chart  
+**Data Source:** `rides_by_weekday.csv`
+
+<img width="1325" height="635" alt="Sheet 5" src="https://github.com/user-attachments/assets/38dd9b42-ab65-4c88-9230-515da6634997" />
+
+This chart shows how ride frequency differs by day of the week and rider type.
+
+---
+
+### 6.4 Monthly Riding Trends
+
+**Chart Type:** Line Chart  
+**Data Source:** `rides_by_month.csv`
+
+<img width="1173" height="635" alt="Sheet 6" src="https://github.com/user-attachments/assets/0ea277dd-5a7b-4c7a-96ab-981c992fd8e8" />
+
+
+This chart shows monthly ride trends throughout 2025.
+
+---
+
+### 6.5 Bike Type Preferences
+
+**Chart Type:** Bar Chart  
+**Data Source:** `bike_type_usage.csv`
+
+<img width="433" height="705" alt="Sheet 3" src="https://github.com/user-attachments/assets/66846bab-2ad4-4a03-8e6f-1850b0f8cc07" />
+
+This chart compares bike type usage between annual members and casual riders.
+
+---
+
+### 6.6 Average Ride Duration by Day of Week
+
+**Chart Type:** Line Chart  
+**Data Source:** `duration_by_weekday.csv`
+
+<img width="779" height="635" alt="Sheet 4" src="https://github.com/user-attachments/assets/c982b47f-77aa-4fe2-875f-f32f1d01c47c" />
+
+
+This chart shows how average ride duration changes throughout the week for each rider type.
+
+---
+
+### 6.7 Tableau Dashboard
+
+The six visualizations were combined into one Tableau dashboard to present the key findings clearly.
+
+![Cyclistic Dashboard](<img width="1499" height="999" alt="Dashboard 1" src="https://github.com/user-attachments/assets/a2c6ccc4-d02d-4abd-8367-25787ff6293c" />
+)
+
+
