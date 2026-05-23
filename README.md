@@ -1,6 +1,7 @@
 
-# From Casual Riders to Loyal Members: A Cyclistic Case Study<img width="237" height="198" alt="Screenshot 2026-05-18 211032" src="https://github.com/user-attachments/assets/89196a4d-bea1-43f2-8fa2-0a6d3b672a02" />
+# From Casual Riders to Loyal Members: A Cyclistic Case Study
 
+<img width="237" height="198" alt="Screenshot 2026-05-18 211032" src="https://github.com/user-attachments/assets/89196a4d-bea1-43f2-8fa2-0a6d3b672a02" />
 
 ## Overview
 This project is the first case study from the 
