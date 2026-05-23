@@ -476,3 +476,49 @@ The six visualizations were combined into one Tableau dashboard to present the k
 
 [View Interactive Tableau Dashboard](https://public.tableau.com/views/CycleDataProject/Sheet1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
+## Visualization Summary
+
+The Tableau dashboard provides a comprehensive comparison of riding behavior between annual members and casual riders across multiple dimensions, including ride volume, ride duration, weekly usage patterns, seasonal trends, and bike type preferences.
+
+The visualizations reveal that annual members generated a significantly higher number of rides throughout the year, indicating more frequent usage of the bike-sharing service. In contrast, casual riders consistently recorded longer ride durations, suggesting that they primarily use Cyclistic bikes for leisure and recreational activities rather than daily commuting.
+
+Weekly usage patterns further support this observation, as casual riders showed increased activity during weekends, while members maintained relatively stable riding patterns throughout the week. Seasonal trends demonstrated that both rider groups were influenced by weather conditions, with ride activity peaking during warmer months and declining during winter.
+
+Additionally, electric bikes emerged as the most popular bike type among both rider groups, highlighting the growing demand for convenient and accessible transportation options.
+
+Overall, the dashboard effectively illustrates the behavioral differences between annual members and casual riders and provides valuable insights to support membership conversion strategies.
+## Conclusion
+
+This analysis examined how annual members and casual riders use Cyclistic bikes differently using 2025 trip data.
+
+The findings revealed several key behavioral differences between the two rider groups. Annual members generated significantly more rides and demonstrated consistent riding patterns throughout the week, suggesting that they primarily use Cyclistic bikes for commuting and regular transportation. In contrast, casual riders took fewer rides but spent considerably more time on each trip and were more active during weekends, indicating a stronger preference for leisure and recreational riding.
+
+Additionally, both rider groups showed a strong preference for electric bikes, and ride demand increased during warmer months before declining during winter.
+
+These insights provide valuable information for Cyclistic's marketing team as they develop strategies to convert casual riders into annual members.
+
+---
+
+## Recommendations
+
+Based on the analysis, the following recommendations are proposed:
+
+### 1. Target Casual Riders During Weekends
+
+Since casual riders are most active on weekends, Cyclistic should promote membership offers during peak weekend periods through digital advertising and mobile app notifications.
+
+### 2. Highlight Membership Savings
+
+Many casual riders frequently take longer trips. Marketing campaigns should emphasize the potential cost savings and convenience of annual memberships compared to single-ride purchases.
+
+### 3. Promote Membership Benefits During Peak Seasons
+
+Ride activity increases significantly during spring and summer. Seasonal campaigns launched during these high-demand months may improve membership conversion rates.
+
+### 4. Leverage Electric Bike Popularity
+
+Electric bikes were the most popular bike type among both rider groups. Cyclistic should highlight electric bike accessibility and availability when promoting membership programs.
+
+### 5. Develop Personalized Digital Marketing Campaigns
+
+Using rider behavior insights, Cyclistic can create targeted email and social media campaigns designed specifically for casual riders who demonstrate frequent usage patterns.
